@@ -37,5 +37,12 @@ if DEBUG:
 for command in [gen_api, ]:
     app.cli.add_command(command)
     
+
+app.context_processor(
+    lambda: {
+        'config': app_config
+    }
+)
+
 if __name__ == "__main__":
     app.run()
